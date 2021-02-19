@@ -45,6 +45,19 @@ body{
     z-index: 1000;
 }
 
+.header.fixed{
+    height: auto;
+    position: fixed;
+    background-color: #37344e;
+
+    animation: smoothScroll 1s forwards;
+}
+
+.header.fixed .header__inner{
+   padding: 15px 0;
+   border-bottom: 0;
+}
+
 .header__inner{
     display: flex;
     justify-content: space-between;
@@ -53,7 +66,6 @@ body{
     padding: 35px 0;
     border-bottom: 1px solid #515369;
 }
-
 
 /* Nav */
 .nav{
@@ -369,9 +381,19 @@ body{
     overflow: hidden;
 }
 
+.reviews__slider{
+    height: 500px;
+    overflow: hidden;
+}
+
+.reviews__slider.slick-initialized{
+    height: auto;
+}
+
 .reviews__item{
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .reviews__photo{
@@ -412,6 +434,49 @@ body{
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
+}
+
+.slick-dots{
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0 0 10px;
+    list-style: none;
+    width: 50%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.slick-dots li{
+    margin: 0 5px;
+}
+   
+
+.slick-dots button{
+    width: 15px;
+    height: 15px;
+    padding: 0;
+
+    background: #fff;
+    border-radius: 50%;
+    border: 0;
+    opacity: .5;
+    cursor: pointer;
+
+    font-size: 0;
+    color: transparent;
+}
+
+.slick-dots button:focus{
+    outline: 0;
+}
+
+.slick-dots .slick-active button{
+    opacity: 1;
 }
 
 /* Download */
@@ -513,6 +578,24 @@ body{
     /* Nav */
     .nav{
         display: none;
+        width: 100%;
+        flex-direction: column;
+
+        background-color: #37344e;
+        text-align: center;
+
+        position: absolute;
+        right: 0;
+        top: 100%;
+    }
+
+    .nav.show{
+        display: flex;
+    }
+
+    .nav__link{
+        padding: 10px 15px;
+        margin-left: 0px;
     }
 
     /* Burger */
